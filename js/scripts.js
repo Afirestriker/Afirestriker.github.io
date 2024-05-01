@@ -56,7 +56,7 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
     function getTotalExperienceCount() {
-        const startDate = new Date(['2022', '07']); // [Year, Month]
+        const startDate = new Date(['2022', '06']); // [Year, Month]
         const currentDate = new Date();
 
         const formatedStartDate = `${startDate.getMonth() + 1} / ${startDate.getFullYear()}`;
