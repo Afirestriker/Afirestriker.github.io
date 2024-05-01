@@ -27,4 +27,45 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // Dynamic experience count
+    function experienceCountInMonths(startDate, endDate) {
+        // Splitting the dates into month and year components
+        let [startMonth, startYear] = startDate.split("/");
+        let [endMonth, endYear] = endDate.split("/");
+
+        // Parsing month and year components as integers
+        startMonth = parseInt(startMonth);
+        startYear = parseInt(startYear);
+        endMonth = parseInt(endMonth);
+        endYear = parseInt(endYear); // Calculating the total month count
+
+        const totalMonths = (endYear - startYear) * 12 + (endMonth - startMonth);
+
+        return totalMonths;
+    }
+
+    function experienceCountInYears(month) {
+        if (month < 1) {
+            return "Invalid month. Month should be greater than or equal to 1.";
+        }
+
+        const yearCount = Math.floor(month / 12);
+        const remainingMonths = month % 12 === 0 ? "" : `.${month % 12}`;
+
+        return `${yearCount}${remainingMonths}`;
+    }
+
+    function getTotalExperienceCount() {
+        const startDate = new Date(['2022', '07']); // [Year, Month]
+        const currentDate = new Date();
+
+        const formatedStartDate = `${startDate.getMonth() + 1} / ${startDate.getFullYear()}`;
+        const formatedCurrentDate = `${currentDate.getMonth() + 1} / ${currentDate.getFullYear()}`;
+
+        const totalMonths = experienceCountInMonths(formatedStartDate, formatedCurrentDate);
+
+        return experienceCountInYears(totalMonths);
+    }
+
+    $('#total__experience').html(getTotalExperienceCount());
 });
