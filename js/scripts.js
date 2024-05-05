@@ -59,7 +59,7 @@ window.addEventListener('DOMContentLoaded', event => {
         const startDate = new Date(['2022', '06']); // [Year, Month]
         const currentDate = new Date();
 
-        const formatedStartDate = `${startDate.getMonth() + 1} / ${startDate.getFullYear()}`;
+        const formatedStartDate = `${startDate.getMonth()} / ${startDate.getFullYear()}`;
         const formatedCurrentDate = `${currentDate.getMonth() + 1} / ${currentDate.getFullYear()}`;
 
         const totalMonths = experienceCountInMonths(formatedStartDate, formatedCurrentDate);
