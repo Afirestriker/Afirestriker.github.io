@@ -536,11 +536,6 @@ export const credentials = [
 
 export const routeMetadata = [
   {
-    path: "/work/",
-    title: "Selected work — Ashish Agrawal",
-    description: "Explore engineering case studies in reusable form platforms, visual workflow tools, frontend migration and responsible AI-assisted engineering.",
-  },
-  {
     path: "/",
     title: "Ashish Agrawal — Software Engineer",
     description:

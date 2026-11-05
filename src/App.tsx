@@ -16,7 +16,7 @@ export function App({ path }: { path: string }) {
   const study = studies.find((s) => path === `/work/${s.slug}/`);
   return (
     <>
-      <Header path={path} />
+      <Header />
       {path === "/" ? (
         <main id="main">
           <Hero />
@@ -29,11 +29,6 @@ export function App({ path }: { path: string }) {
           <AISection />
           <AboutSection />
           <MoreAbout />
-          <Contact />
-        </main>
-      ) : path === "/work/" ? (
-        <main id="main">
-          <SelectedWork overview />
           <Contact />
         </main>
       ) : path === "/experience/" ? (
@@ -61,7 +56,7 @@ export function App({ path }: { path: string }) {
       ) : study ? (
         <main id="main">
           <div className="container case-header">
-            <a className="back-link" href="/work/">
+            <a className="back-link" href="/#projects">
               ← Back to selected work
             </a>
             <p className="eyebrow">CASE STUDY / {study.category}</p>

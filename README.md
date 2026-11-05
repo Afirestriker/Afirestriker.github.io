@@ -32,9 +32,7 @@ The production preview runs at http://127.0.0.1:4174/. It serves the actual gene
 - `prototype/`: the original approved, buildless design reference. It remains independently previewable on port 4173.
 - `docs/`: solution/design document, content draft and implementation notes.
 
-Vite builds client assets and a temporary server renderer. The renderer creates real HTML at `/`, `/work/`, `/experience/`, and four `/work/.../` directories. GitHub Pages does not need a running Node server. Main content is included in HTML before hydration; navigation and reading do not depend on JavaScript. The form demonstration is local, uses synthetic configuration and never submits or persists input.
-
-The shared desktop and mobile menus open the work overview, full experience and AI engineering pages directly. Contact returns to the homepage contact section. Homepage section anchors remain available, and case-study back links return to the work overview.
+Vite builds client assets and a temporary server renderer. The renderer creates real HTML at `/`, `/experience/`, and four `/work/.../` directories. GitHub Pages does not need a running Node server. Main content is included in HTML before hydration; navigation and reading do not depend on JavaScript. The form demonstration is local, uses synthetic configuration and never submits or persists input.
 
 The static build also generates titles, descriptions, canonical URLs, social metadata, Person structured data, sitemap.xml, robots.txt, and 404.html. Source maps are disabled. Only `dist/` is deployed: source documents, research extracts, prototype files, old vendor libraries and internal correspondence are excluded.
 

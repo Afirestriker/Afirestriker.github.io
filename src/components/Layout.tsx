@@ -1,18 +1,12 @@
 import { useEffect, useRef } from "react";
 import { profile } from "../content";
 
-function NavLinks({ path }: { path: string }) {
+function NavLinks() {
   return (
     <>
-      <a href="/work/" aria-current={path === "/work/" ? "page" : undefined}>
-        Selected work
-      </a>
-      <a href="/experience/" aria-current={path === "/experience/" ? "page" : undefined}>
-        Experience
-      </a>
-      <a href="/work/ai-assisted-engineering/" aria-current={path === "/work/ai-assisted-engineering/" ? "page" : undefined}>
-        Engineering with AI
-      </a>
+      <a href="/#projects">Selected work</a>
+      <a href="/#experience">Experience</a>
+      <a href="/#ai-engineering">Engineering with AI</a>
       <a className="nav-contact" href="/#contact">
         Let's talk <span aria-hidden="true">↗</span>
       </a>
@@ -20,7 +14,7 @@ function NavLinks({ path }: { path: string }) {
   );
 }
 
-export function Header({ path }: { path: string }) {
+export function Header() {
   const menu = useRef<HTMLDetailsElement>(null);
   useEffect(() => {
     const close = (event: KeyboardEvent) => {
@@ -57,7 +51,7 @@ export function Header({ path }: { path: string }) {
             </span>
           </a>
           <nav className="main-nav desktop-nav" aria-label="Main navigation">
-            <NavLinks path={path} />
+            <NavLinks />
           </nav>
           <details className="mobile-menu" ref={menu}>
             <summary>
@@ -71,7 +65,7 @@ export function Header({ path }: { path: string }) {
                   menu.current.open = false;
               }}
             >
-              <NavLinks path={path} />
+              <NavLinks />
             </nav>
           </details>
         </div>
