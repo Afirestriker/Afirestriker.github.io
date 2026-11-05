@@ -35,28 +35,46 @@ export function MigrationArt() {
   );
 }
 
-export function SelectedWork() {
+function AIArt() {
+  return (
+    <div className="project-art ai-art">
+      <div className="art-topbar"><span>AI-ASSISTED ENGINEERING</span><span>04</span></div>
+      <div className="ai-art-steps" role="img" aria-label="Engineering workflow: scope, context and skills, permission controls, validation, and human release decisions.">
+        <span>01 / Scope the work</span>
+        <span>02 / Context &amp; skills</span>
+        <span>03 / Permissions &amp; hooks</span>
+        <span>04 / Validate &amp; review</span>
+        <span>05 / Own the release</span>
+      </div>
+      <div className="art-caption"><span>HUMAN ACCOUNTABILITY THROUGHOUT</span><span>Workflow overview</span></div>
+    </div>
+  );
+}
+
+export function SelectedWork({ overview = false }: { overview?: boolean }) {
+  const Heading = overview ? "h1" : "h2";
   return (
     <section
-      className="section container"
+      className={`section container${overview ? " work-overview" : ""}`}
       id="projects"
       aria-labelledby="work-title"
     >
+      {overview && <a className="back-link" href="/">← Back to portfolio</a>}
       <div className="section-intro">
         <div>
           <p className="eyebrow">01 / SELECTED WORK</p>
-          <h2 id="work-title">
+          <Heading id="work-title">
             Built to solve.
             <br />
             <em>Designed to be used.</em>
-          </h2>
+          </Heading>
         </div>
         <p>
           Selected problems I’ve worked on, the decisions behind them, and what
           changed for the people using the tools.
         </p>
       </div>
-      {studies.slice(0, 3).map((study, i) => (
+      {studies.slice(0, overview ? studies.length : 3).map((study, i) => (
         <article
           className={`project ${i % 2 ? "project-secondary" : "project-featured"}`}
           key={study.slug}
@@ -82,7 +100,7 @@ export function SelectedWork() {
               Read the case study <span aria-hidden="true">↗</span>
             </a>
           </div>
-          {i % 2 === 1 && <WorkflowArt />}
+          {i % 2 === 1 && (study.illustration === "ai" ? <AIArt /> : <WorkflowArt />)}
         </article>
       ))}
       <div className="work-note">

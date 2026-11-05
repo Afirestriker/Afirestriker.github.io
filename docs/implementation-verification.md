@@ -41,3 +41,9 @@ The implementation is ready for review as a local build. Before publishing, conf
 No Lighthouse score or comprehensive screen-reader/cross-browser certification is claimed. Manual keyboard checks, responsive checks and static output validation passed; a broader device matrix and any organization-specific disclosure review remain useful before release. Original source files remain recoverable through Git history, and the approved prototype remains in its own folder.
 
 The supplied resume is served unchanged. Website content can support a separate resume rewrite through the stable achievement records in `src/content.ts` and the private evidence register.
+
+## Navigation refinement
+
+The redesign was committed before the navigation changes. The follow-up adds `/work/` as an overview of all four professional case studies. Desktop and mobile menus now link directly to that overview, the full experience page and the detailed AI engineering page; Contact still targets the homepage section. Case-study back links return to the work overview, and current-page links receive an accessible page indicator. Homepage section anchors and the approved skills labeling are retained.
+
+Navigation validation passed: `npm test`, `npm run build`, and generated-output checks for eight HTML pages. Browser checks confirmed the four-study overview, direct menu destinations, current-page indicators, case-study return to `/work/`, and no overflow at 320 pixels on the new overview.

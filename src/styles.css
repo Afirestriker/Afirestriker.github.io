@@ -2590,3 +2590,20 @@ details > div {
   margin: 0;
   min-inline-size: 0;
 }
+
+.main-nav a[aria-current="page"],
+.mobile-links a[aria-current="page"] {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+.work-overview { padding-top: 40px; }
+.work-overview .section-intro h1 { font-size: clamp(36px, 4.1vw, 54px); }
+.ai-art { background: var(--dark); color: #f2f5ed; }
+.ai-art .art-topbar, .ai-art .art-caption { color: #c4d5b3; }
+.ai-art-steps { display: grid; gap: 10px; padding-block: 25px; }
+.ai-art-steps span { border-bottom: 1px solid #ffffff26; padding: 9px 0; font: 12px/1.7 var(--mono); }
+@media(max-width:600px) {
+  .work-overview .section-intro h1 { font-size: 39px; }
+  .ai-art .art-caption { flex-wrap: wrap; }
+}
